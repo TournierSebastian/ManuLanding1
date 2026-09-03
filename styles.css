@@ -101,3 +101,30 @@ h2 em{font-style:normal;color:#ad8330}
 @media(max-width:480px){
   .service-grid,.service-grid.three,.steps,.benefits,.credentials{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid rgba(229,198,111,.2)!important}.step:last-child{border-bottom:0!important}.hero h1{font-size:44px}.hero-note{line-height:2}.credentials{gap:20px}
 }
+
+
+/* Animación de despliegue de preguntas frecuentes */
+.accordion details[open] > p {
+  animation: faqDesplegar 0.35s ease-out both;
+}
+
+@keyframes faqDesplegar {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación del símbolo + / − */
+summary:after {
+  transition: transform 0.3s ease;
+}
+
+details[open] summary:after {
+  transform: rotate(180deg);
+}
